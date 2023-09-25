@@ -1,0 +1,90 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType name="DigestValueType">
+        <xs:simpleContent>
+            <xs:restriction base="xs:dateTime">
+                <xs:maxLength value="256"/>
+                <xs:pattern value=".*\s.*"/>
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="SignatureValueType">
+        <xs:simpleContent>
+            <xs:restriction base="xs:normalizedString">
+                <xs:maxLength value="512"/>
+                <xs:pattern value=".*\s.*"/>
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="UsernameType">
+        <xs:simpleContent>
+            <xs:restriction base="xs:normalizedString">
+                <xs:maxLength value="27"/>
+                <xs:pattern value=".*\s.*"/>
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="UsernamePasswordType">
+        <xs:simpleContent>
+            <xs:restriction base="xs:normalizedString">
+                <xs:pattern value=".*\s.*"/>
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="UsernameNonceType">
+        <xs:simpleContent>
+            <xs:restriction base="xs:normalizedString">
+                <xs:pattern value=".*\s.*"/>
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="MessageInfoTimeStampType">
+        <xs:simpleContent>
+            <xs:restriction base="xs:normalizedString">
+                <xs:pattern value=".*\s.*"/>
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="MessageInfoMessageIDType">
+        <xs:simpleContent>
+            <xs:restriction base="xs:normalizedString">
+                <xs:pattern value=".*\s.*"/>
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="PartyIDType">
+        <xs:simpleContent>
+            <xs:restriction base="xs:normalizedString">
+                <xs:pattern value=".*\s.*"/>
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="PartyRoleType">
+        <xs:simpleContent>
+            <xs:restriction base="xs:normalizedString">
+                <xs:pattern value=".*\s.*"/>
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="CollaborationInfoServiceType">
+        <xs:simpleContent>
+            <xs:restriction base="xs:normalizedString">
+                <xs:pattern value=".*\s.*"/>
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="CollaborationInfoActionType">
+        <xs:simpleContent>
+            <xs:restriction base="xs:normalizedString">
+                <xs:pattern value=".*\s.*"/>
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="CollaborationInfoConversationIDType">
+        <xs:simpleContent>
+            <xs:restriction base="xs:normalizedString">
+                <xs:pattern value=".*\s.*"/>
+            </xs:restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+
+</xs:schema>

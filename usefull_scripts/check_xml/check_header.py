@@ -66,7 +66,7 @@ def lxml_xsd(xml, xsd):
 
 if __name__ == "__main__":
     xml_filename = "jens_error.xml"
-    xsd_filename = 'new_xsd/jens.xsd'  # VIGTIGT: brug new XSD
+    xsd_filename = 'Jens02/jens.xsd'  # VIGTIGT: brug new XSD
 
     validate_xml_with_xsd(xml_filename, xsd_filename)
     # lxml_xsd(xml_filename)
