@@ -1,0 +1,145 @@
+POST https://secureftpgatewaytest.skat.dk:6384/exchange/CVR_30808460_UID_25351738 HTTP/1.1
+Accept: application/soap+xml, text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+Cache-Control: no-cache
+User-Agent: Java/20.0.2
+Connection: keep-alive
+Host: secureftpgatewaytest.skat.dk:6384
+Pragma: no-cache
+Content-Length: 11541
+Content-Type: multipart/related; boundary="----=_Part_7_1405055124.1690790552430"; type="application/soap+xml"
+
+------=_Part_7_1405055124.1690790552430
+Content-Type: application/soap+xml; charset=utf-8
+
+<env:Envelope xmlns:env="http://www.w3.org/2003/05/soap-envelope" xmlns:eb3="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/"><env:Header><wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" env:mustUnderstand="true"><ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#" Id="SIG-695bf916-411e-4191-a659-563690c63bb9"><ds:SignedInfo><ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"><ec:InclusiveNamespaces xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#" PrefixList="eb3 env"/></ds:CanonicalizationMethod><ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/><ds:Reference URI="#id-b7ad55df-cc66-4b07-9dda-4b99245d9d5e"><ds:Transforms><ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"><ec:InclusiveNamespaces xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#" PrefixList="eb3"/></ds:Transform></ds:Transforms><ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/><ds:DigestValue>zw2kOo/sgXAJdZ+AphtcobMjzeRqeRSQo9gTcpolLzk=</ds:DigestValue></ds:Reference><ds:Reference URI="#id-3ddb2137-ab6e-4016-b8ac-4c47c90b9880"><ds:Transforms><ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></ds:Transforms><ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/><ds:DigestValue>75qJ2jcv8Dgao0M38jSG/v0mslOL6uCmTkARN2FVfrQ=</ds:DigestValue></ds:Reference><ds:Reference URI="#UsernameToken-d7f3af4a-b084-4207-b4db-133b6f11cf79"><ds:Transforms><ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"><ec:InclusiveNamespaces xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#" PrefixList="eb3 env"/></ds:Transform></ds:Transforms><ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/><ds:DigestValue>u7E1ttQHCaE1hXmxlDoNzHhTVDeorGT2Fn6/S65Jjvg=</ds:DigestValue></ds:Reference><ds:Reference URI="cid:2a12e0e1-e247-4987-81c4-2231367a95c7-9f0171ba-0d3c-45ee-8242-bb6832c91efb"><ds:Transforms><ds:Transform Algorithm="http://docs.oasis-open.org/wss/oasis-wss-SwAProfile-1.1#Attachment-Content-Signature-Transform"/></ds:Transforms><ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/><ds:DigestValue>PqBXfL0sRwJfhJY/ngp5qeC7/dlIPXq3rOZyUULHPZM=</ds:DigestValue></ds:Reference></ds:SignedInfo><ds:SignatureValue>cGPw+2w9jjjIWgzCZXblwHHzFIsknCjCPJLUo10Co1uMO4iw2LIexon442Y38JirIvF1xJWl7u+o&#13;
+2UVhhHd/sfxUmYCVqOdkl21tUsQRGndi/S6Bc9DbRuuWmSZVpKVCkVwa+SknxTBmeMzvDCJ3ONck&#13;
+9IgtXEY3DKjWWVxC05geuonHPtU/EAoffulyNKJBfR7q1fJmvfUUh04U2gfmQH/lX1ij4rDGJuyf&#13;
+uZ5etxrAfBsrozii8DzPLLlD4JpnS7yTdTfFrQGROJT19L5wo8TXvY2PUdsYLWKZWA7US6aU29Ty&#13;
+WPtH/83xZbS2GRZjdEqxe8dkiNgqDsZX0X6Rfg==</ds:SignatureValue><ds:KeyInfo Id="KI-d039764f-53e8-489b-b2dd-03591241d265"><wsse:SecurityTokenReference wsu:Id="STR-45ba3775-ce09-4eb7-b271-a06a2b2a8037"><ds:X509Data><ds:X509IssuerSerial><ds:X509IssuerName>CN=TRUST2408 Systemtest XXXIV CA,O=TRUST2408,C=DK</ds:X509IssuerName><ds:X509SerialNumber>1604753667</ds:X509SerialNumber></ds:X509IssuerSerial></ds:X509Data></wsse:SecurityTokenReference></ds:KeyInfo></ds:Signature></wsse:Security><wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" env:mustUnderstand="true" env:role="ebms"><wsse:UsernameToken wsu:Id="UsernameToken-d7f3af4a-b084-4207-b4db-133b6f11cf79"><wsse:Username>CVR_30808460_UID_25351738</wsse:Username><wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">zsJfWG3iZge+qZE5kRWjqKtA7+o=</wsse:Password><wsse:Nonce EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary">2rHhjBFzI9dl6tZR9Y5IDQ==</wsse:Nonce><wsu:Created>2023-07-31T08:02:32.427Z</wsu:Created></wsse:UsernameToken></wsse:Security><eb3:Messaging xmlns:ns3="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" env:mustUnderstand="true" wsu:Id="id-3ddb2137-ab6e-4016-b8ac-4c47c90b9880"><eb3:UserMessage><eb3:MessageInfo><eb3:Timestamp>2023-07-31T10:02:32.3867407</eb3:Timestamp><eb3:MessageId>2a12e0e1-e247-4987-81c4-2231367a95c7</eb3:MessageId></eb3:MessageInfo><eb3:PartyInfo><eb3:From><eb3:PartyId type="string">CVR_30808460_UID_25351738_AS4</eb3:PartyId><eb3:Role>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/initiator</eb3:Role></eb3:From><eb3:To><eb3:PartyId type="string">SKAT-MFT-AS4</eb3:PartyId><eb3:Role>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/responder</eb3:Role></eb3:To></eb3:PartyInfo><eb3:CollaborationInfo><eb3:Service type="string">DMS.Export</eb3:Service><eb3:Action>Declaration.Submit</eb3:Action><eb3:ConversationId>placeholder</eb3:ConversationId></eb3:CollaborationInfo><eb3:MessageProperties><eb3:Property name="procedureType">B1</eb3:Property></eb3:MessageProperties><eb3:PayloadInfo><eb3:PartInfo href="cid:2a12e0e1-e247-4987-81c4-2231367a95c7-9f0171ba-0d3c-45ee-8242-bb6832c91efb"><eb3:PartProperties><eb3:Property name="original-file-name">declaration.xml</eb3:Property></eb3:PartProperties></eb3:PartInfo></eb3:PayloadInfo></eb3:UserMessage></eb3:Messaging></env:Header><env:Body xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="id-b7ad55df-cc66-4b07-9dda-4b99245d9d5e"/></env:Envelope>
+------=_Part_7_1405055124.1690790552430
+Content-Type: application/octet-stream
+Content-ID: 2a12e0e1-e247-4987-81c4-2231367a95c7-9f0171ba-0d3c-45ee-8242-bb6832c91efb
+Content-Transfer-Encoding: binary
+
+<ns3:Declaration xmlns:ns3="urn:wco:datamodel:WCO:DEC-DMS:2" xmlns:urn1="urn:wco:datamodel:WCO:Declaration_DS:DMS:2">
+    <ns3:FunctionCode>9</ns3:FunctionCode>
+    <ns3:ProcedureCategory>B1</ns3:ProcedureCategory>
+    <ns3:FunctionalReferenceID>B1Amd_Pre_56965</ns3:FunctionalReferenceID>
+    <ns3:TypeCode>EXD</ns3:TypeCode>
+    <ns3:DeclarationOfficeID>DK005600</ns3:DeclarationOfficeID>
+    <ns3:InvoiceAmount currencyID="NOK">7442.00</ns3:InvoiceAmount>
+    <ns3:Submitter>
+        <ns3:Name>30808460</ns3:Name>
+        <ns3:ID>30808460</ns3:ID>
+    </ns3:Submitter>
+    <ns3:Declarant>
+        <ns3:ID>DK13421730</ns3:ID>
+    </ns3:Declarant>
+    <ns3:ExitOffice>
+        <ns3:ID>DK004700</ns3:ID>
+    </ns3:ExitOffice>
+    <ns3:Exporter>
+        <ns3:ID>DK13421730</ns3:ID>
+    </ns3:Exporter>
+    <ns3:GoodsShipment>
+        <ns3:Consignee>
+            <ns3:Name>Postkontor X</ns3:Name>
+            <ns3:Address>
+                <ns3:CityName>Tromso</ns3:CityName>
+                <ns3:CountryCode>NO</ns3:CountryCode>
+                <ns3:Line>15</ns3:Line>
+                <ns3:PostcodeID>NO-6283</ns3:PostcodeID>
+            </ns3:Address>
+        </ns3:Consignee>
+        <ns3:Consignment>
+            <ns3:BorderTransportMeans>
+                <ns3:ID>RegistrationNumber</ns3:ID>
+                <ns3:IdentificationTypeCode>30</ns3:IdentificationTypeCode>
+                <ns3:RegistrationNationalityCode>DK</ns3:RegistrationNationalityCode>
+                <ns3:ModeCode>3</ns3:ModeCode>
+            </ns3:BorderTransportMeans>
+            <ns3:ContainerCode>0</ns3:ContainerCode>
+            <ns3:GoodsLocation>
+                <ns3:TypeCode>A</ns3:TypeCode>
+                <ns3:IdentificationType>V</ns3:IdentificationType>
+                <ns3:CustomsOffice>
+                    <ns3:identification>DK004700</ns3:identification>
+                </ns3:CustomsOffice>
+            </ns3:GoodsLocation>
+        </ns3:Consignment>
+        <ns3:Destination>
+            <ns3:CountryCode>UA</ns3:CountryCode>
+        </ns3:Destination>
+        <ns3:ExportCountry>
+            <ns3:ID>DK</ns3:ID>
+        </ns3:ExportCountry>
+        <ns3:GoodsMeasure>
+            <ns3:GrossMassMeasure unitCode="KGM">16500.00</ns3:GrossMassMeasure>
+        </ns3:GoodsMeasure>
+        <ns3:GovernmentAgencyGoodsItem>
+            <ns3:SequenceNumeric>1</ns3:SequenceNumeric>
+            <ns3:StatisticalValueAmount>7442</ns3:StatisticalValueAmount>
+            <ns3:Commodity>
+                <ns3:Description>Heifers of the grey, brown or yellow mountain breeds and spotted Pinzgau breed, other than for slaughter; Of a weight not exceeding 80 kg</ns3:Description>
+                <ns3:Classification>
+                    <ns3:SequenceNumeric>1</ns3:SequenceNumeric>
+                    <ns3:ID>010221</ns3:ID>
+                    <ns3:IdentificationTypeCode>HS</ns3:IdentificationTypeCode>
+                </ns3:Classification>
+                <ns3:Classification>
+                    <ns3:SequenceNumeric>2</ns3:SequenceNumeric>
+                    <ns3:ID>10</ns3:ID>
+                    <ns3:IdentificationTypeCode>CN</ns3:IdentificationTypeCode>
+                </ns3:Classification>
+                <ns3:GoodsMeasure>
+                    <ns3:GrossMassMeasure unitCode="KGM">16500.00</ns3:GrossMassMeasure>
+                    <ns3:NetNetWeightMeasure>16000.00</ns3:NetNetWeightMeasure>
+                    <ns3:TariffQuantity unitCode="NAR">100.000</ns3:TariffQuantity>
+                </ns3:GoodsMeasure>
+            </ns3:Commodity>
+            <ns3:GovernmentProcedure>
+                <ns3:SequenceNumeric>1</ns3:SequenceNumeric>
+                <ns3:CurrentCode>10</ns3:CurrentCode>
+                <ns3:PreviousCode>00</ns3:PreviousCode>
+            </ns3:GovernmentProcedure>
+            <ns3:GovernmentProcedure>
+                <ns3:SequenceNumeric>2</ns3:SequenceNumeric>
+                <ns3:CurrentCode>000</ns3:CurrentCode>
+            </ns3:GovernmentProcedure>
+            <ns3:Origin>
+                <ns3:SequenceNumeric>1</ns3:SequenceNumeric>
+                <ns3:CountryCode>CN</ns3:CountryCode>
+            </ns3:Origin>
+            <ns3:Packaging>
+                <ns3:SequenceNumeric>1</ns3:SequenceNumeric>
+                <ns3:MarksNumbersID>ADR</ns3:MarksNumbersID>
+                <ns3:QuantityQuantity>200</ns3:QuantityQuantity>
+                <ns3:TypeCode>CT</ns3:TypeCode>
+            </ns3:Packaging>
+            <ns3:PreviousDocument>
+                <ns3:SequenceNumeric>1</ns3:SequenceNumeric>
+                <ns3:CategoryCode>N</ns3:CategoryCode>
+                <ns3:ID>ID123</ns3:ID>
+                <ns3:TypeCode>380</ns3:TypeCode>
+            </ns3:PreviousDocument>
+            <ns3:UCR>
+                <ns3:TraderAssignedReferenceID>P198R65Q29</ns3:TraderAssignedReferenceID>
+            </ns3:UCR>
+        </ns3:GovernmentAgencyGoodsItem>
+        <ns3:TradeTerms>
+            <ns3:ConditionCode>DAP</ns3:ConditionCode>
+            <ns3:LocationID>1234</ns3:LocationID>
+            <ns3:LocationName>Place name</ns3:LocationName>
+            <ns3:CountryCode>DK</ns3:CountryCode>
+        </ns3:TradeTerms>
+        <ns3:Warehouse>
+            <ns3:ID>DKXXXX0XXXX</ns3:ID>
+            <ns3:TypeCode>R</ns3:TypeCode>
+        </ns3:Warehouse>
+    </ns3:GoodsShipment>
+    <ns3:ExportOffice>
+        <ns3:identification>DK005600</ns3:identification>
+    </ns3:ExportOffice>
+    <ns3:SecurityCode>0</ns3:SecurityCode>
+</ns3:Declaration>
+------=_Part_7_1405055124.1690790552430--
