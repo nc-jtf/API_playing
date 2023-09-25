@@ -1,7 +1,7 @@
 import time
 from lxml import etree
 import xml.etree.ElementTree as ET
-from xsd_validator import XsdValidator
+# from xsd_validator import XsdValidator
 
 def validate_xml(xml_filename, xsd_filenames):
 
@@ -53,13 +53,14 @@ def lxml_xsd(xml, xsd):
     # TODO: kender ikke tree.validate. Find ud af hvordan man så validerer
     tree = ET.parse(xml)
     tree.validate(xsd)
-def xsd_validator(xml, xsd):
-    validator = XsdValidator(xsd)
-    validator.assert_valid(xml)
+
+# def xsd_validator(xml, xsd):
+#     validator = XsdValidator(xsd)
+#     validator.assert_valid(xml)
 
 if __name__ == "__main__":
     xml_filename = "jens_error.xml"
-    xsd_filename = 'new_xsd/jens.xsd' #VIGTIGT: brug new XSD
+    xsd_filename = 'new_xsd/jens.xsd'  #VIGTIGT: brug new XSD
 
     validate_xml_with_xsd(xml_filename, xsd_filename)
     # lxml_xsd(xml_filename)
