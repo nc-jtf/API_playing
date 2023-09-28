@@ -65,8 +65,9 @@ def lxml_xsd(xml, xsd):
 #     validator.assert_valid(xml)
 
 if __name__ == "__main__":
-    xml_filename = "jens_error.xml"
-    xsd_filename = 'Jens02/jens.xsd'  # VIGTIGT: brug new XSD
+    xml_filename = 'header.xml'
+    xsd_filename = 'unrestrictive/jens.xsd'  # VIGTIGT: brug new XSD
+    # xsd_filename = 'Jens02/jens.xsd'  # VIGTIGT: brug new XSD
 
     validate_xml_with_xsd(xml_filename, xsd_filename)
     # lxml_xsd(xml_filename)
