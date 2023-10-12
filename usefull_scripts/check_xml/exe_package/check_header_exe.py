@@ -1,6 +1,8 @@
+import os
 import time
 from lxml import etree
 import xml.etree.ElementTree as ET
+import sys
 
 def validate_xml(xml_filename, xsd_filenames):
 
@@ -41,26 +43,29 @@ def validate_xml_with_xsd(xml_filename, xsd_filename):
 
 def tester(xml):
     # Parse the XML document
-    tree = ET.parse('jens xml validering Indented.xml')
+    tree = ET.parse('../jens xml validering Indented.xml')
     # Find the ItemCode node
     item_code_node = tree.find('Envelope/Header/Security/Signature/SignedInfo/CanonicalizationMethod/InclusiveNamespaces')
     # Get the value of the ItemCode node
     item_code = item_code_node.text
     print(item_code)
 
+def get_xsd_path():
+    if getattr(sys, 'frozen', False):  # Check if script is bundled into an EXE
+        exe_dir = sys._MEIPASS  # Get the directory of the EXE
+        xsd_path = os.path.join(exe_dir, 'jens.xsd')  # Adjust the filename accordingly
+    else:
+        # If not bundled, use a relative path or other method to locate the XSD file.
+        xsd_path = 'jens.xsd'  # Adjust the path as needed
+
+    return xsd_path
+
 
 if __name__ == "__main__":
-    # xml_filename = "jens_error.xml"
-    # xsd_filename = 'jens.xsd'
     xml_filename = input("Enter the path for the xml file containing the envelope: ")
-    xsd_filename = input("Enter the path for the xsd: ")
+    # xsd_filename = input("Enter the path for the xsd file: ")
+    xsd_filename = 'C:/Users/jtf/OneDrive - Netcompany/PycharmProjects/API_playing/usefull_scripts/check_xml/unrestrictive/jens.xsd'
     validate_xml_with_xsd(xml_filename, xsd_filename)
-
-    # tree = ET.parse('jens xml validering Indented.xml')
-    # root = tree.getroot()
-    # att = root.attrib
-    # for child in root[0][0][0][0][0]:
-    #     print(child.tag, child.text)
-
+    input("Press anything to close the program")
     while True:
         time.sleep(5)
