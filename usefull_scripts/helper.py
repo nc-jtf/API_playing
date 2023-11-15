@@ -1,5 +1,6 @@
 from datetime import datetime, timedelta
-from move_sheets_excel import cursor, pack_out
+from database_connection import cursor
+from move_sheets_excel import pack_out
 import plotly.express as px
 import pandas as pd
 # def amount_declaration_progression(weeks_back):

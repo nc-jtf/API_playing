@@ -1,4 +1,4 @@
-from move_sheets_excel import cursor, pack_out
+from database_connection import cursor
 # import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 from helper import *
@@ -105,6 +105,7 @@ and operator_id not in ('13421730', '30808460', '13116482', 'swp.tdp01.b2b', 'td
 and operator_id not like '%19552101' 
 and operator_id like '%:%'
 and procedure_category not in ('H7', 'I2')'''
+
 if __name__ == '__main__':
     cur.execute(amount_declarations_online_sql)
     amount_declarations_online = pack_out(cur.fetchall())
