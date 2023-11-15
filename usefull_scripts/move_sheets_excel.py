@@ -5,11 +5,7 @@ import psycopg2
 
 # 0. database opsætning
 def cursor(database):
-    '''Sets up a connection to the database of your choice and return a cursor to make sql statements in the database'''
-    # write your UFST-DMS NONProd credentials
-    # replace with lq creds
-    username = "nc_jtf"
-    password = "iFRM57_Yb3_3syUd"
+    username, password = get_credentials()
     conn = psycopg2.connect(
         host="127.129.224.100",
         database=database,
@@ -17,6 +13,19 @@ def cursor(database):
         password=password
     )
     return conn.cursor()
+
+def get_credentials():
+    # Change the location of your password
+    credential_location = r'''C:\Users\jtf\OneDrive - Netcompany\Documents\nonprod_credentials.txt'''
+    f = open(credential_location, "r")
+    credentials = f.read()
+    lines = credentials.split('\n')
+
+    username = lines[0]
+    password =  lines[1]
+
+    return username, password
+
 def pack_out(list) -> list:
     '''Pakker en liste af tuples[0] med string ud til en liste med strings'''
     new_list = []
