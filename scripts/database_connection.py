@@ -45,4 +45,5 @@ def get_credentials():
 
 if __name__ == "__main__":
     # foo = cursor(tfe_work_task)
+    cursor(tfe01)
     print(get_credentials())

@@ -64,7 +64,7 @@ def get_xsd_path():
 if __name__ == "__main__":
     xml_filename = input("Enter the path for the xml file containing the envelope: ")
     # xsd_filename = input("Enter the path for the xsd file: ")
-    xsd_filename = 'C:/Users/jtf/OneDrive - Netcompany/PycharmProjects/API_playing/usefull_scripts/check_xml/unrestrictive/jens.xsd'
+    xsd_filename = 'C:/Users/jtf/OneDrive - Netcompany/PycharmProjects/API_playing/scripts/check_xml/unrestrictive/jens.xsd'
     validate_xml_with_xsd(xml_filename, xsd_filename)
     input("Press anything to close the program")
     while True:

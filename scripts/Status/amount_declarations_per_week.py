@@ -1,11 +1,7 @@
 from datetime import datetime, timedelta
-from database_connection import cursor
-from move_sheets_excel import pack_out
+from scripts.database_connection import cursor
+from scripts.move_sheets_excel import pack_out
 import plotly.express as px
-import pandas as pd
-# def amount_declaration_progression(weeks_back):
-#     for weeks in
-#     # Hvor langt skal den gå tilbage? 8 uger? input
 
 def amount_declarations_per_week(weeks):
     cur = cursor("tfe01_trader_portal")
