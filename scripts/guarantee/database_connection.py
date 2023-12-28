@@ -8,11 +8,12 @@ sit_05_import_work_task = "sit05_cwm_import_work_task_manager"
 tfe01_add_msg = "tfe01_cwm_import_additional_message"
 tfe_work_task = "tfe01_platform_work_task_manager"
 
+#TODO: use the local file instead
 def cursor(database):
     # write your UFST-DMS NONProd credentials
     # replace with lq creds
     username = "nc_jtf"
-    password = "uPf4vMRVt7K*4st7"
+    password = "59*9MJ9bfHPVnan4"
     conn = psycopg2.connect(
         host="127.129.224.100",
         database=database,
@@ -23,8 +24,9 @@ def cursor(database):
 
 def connection(database):
     # write your UFST-DMS NONProd credentials
+
     username = "nc_jtf"
-    password = "uPf4vMRVt7K*4st7"
+    password = "59*9MJ9bfHPVnan4"
     conn = psycopg2.connect(
         host="127.129.224.100",
         database=database,

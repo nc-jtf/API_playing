@@ -4,7 +4,8 @@ import math
 import os
 
 
-def list_new_companies():
+def list_new_companies() -> zip:
+    '''Returns name and CVR for companies which have no MAC in the excel file overview, and therefore have not have created guarantees for them yet'''
     filename = os.getcwd() + "\data\Firma garantier til fletning med breve.xlsx"
     data = pd.read_excel(filename)
     names_of_new_companies = np.array([], dtype =str)
@@ -18,7 +19,8 @@ def list_new_companies():
     return zip(names_of_new_companies, CVR_of_new_companies)
 
 
-def make_CVR_EORI(CVR):  # adds the 'DK' prefix if it's not already there
+def make_CVR_EORI(CVR) -> str:
+    '''Adds the 'DK' prefix if it's not already there'''
     if CVR[:2] == "DK":
         return CVR
     else:
