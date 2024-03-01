@@ -1,31 +1,6 @@
 from openpyxl import load_workbook, Workbook
 from openpyxl.styles import Font, Border, Side
-from openpyxl.utils import get_column_letter
-import psycopg2
-
-# 0. database opsætning
-def cursor(database):
-    username, password = get_credentials()
-    conn = psycopg2.connect(
-        host="127.129.224.100",
-        database=database,
-        user=username,
-        password=password
-    )
-    return conn.cursor()
-
-def get_credentials():
-    # Change the location of your password
-    credential_location = r'''C:\Users\jtf\OneDrive - Netcompany\Documents\nonprod_credentials.txt'''
-    f = open(credential_location, "r")
-    credentials = f.read()
-    lines = credentials.split('\n')
-
-    username = lines[0]
-    password =  lines[1]
-
-    return username, password
-
+from scripts.database_connection import *
 def pack_out(list) -> list:
     '''Pakker en liste af tuples[0] med string ud til en liste med strings'''
     new_list = []

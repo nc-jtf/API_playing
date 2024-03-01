@@ -9,10 +9,7 @@ tfe01_add_msg = "tfe01_cwm_import_additional_message"
 tfe_work_task = "tfe01_platform_work_task_manager"
 
 def cursor(database):
-    # write your UFST-DMS NONProd credentials
-    # replace with lq creds
-    username = "nc_jtf"
-    password = "uPf4vMRVt7K*4st7"
+    username, password = get_credentials()
     conn = psycopg2.connect(
         host="127.129.224.100",
         database=database,
@@ -22,9 +19,7 @@ def cursor(database):
     return conn.cursor()
 
 def connection(database):
-    # write your UFST-DMS NONProd credentials
-    username = "nc_jtf"
-    password = "uPf4vMRVt7K*4st7"
+    username, password = get_credentials()
     conn = psycopg2.connect(
         host="127.129.224.100",
         database=database,
@@ -32,3 +27,15 @@ def connection(database):
         password=password
     )
     return conn
+
+def get_credentials():
+    # Change the location of your password
+    credential_location = r'''C:\Source\nonprod_credentials.txt'''
+    f = open(credential_location, "r")
+    credentials = f.read()
+    lines = credentials.split('\n')
+
+    username = lines[0]
+    password =  lines[1]
+
+    return username, password
