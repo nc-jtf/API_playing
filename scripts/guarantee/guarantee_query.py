@@ -5,6 +5,7 @@ import database_connection
 import data_functions as load
 import os
 from generate_grn import *
+from scripts.move_sheets_excel import pack_out
 
 
 def guarantee_0_1_trader_query():
@@ -23,18 +24,22 @@ def guarantee_0_1_trader_query():
 
     for name_of_new_company, cvr_of_new_company in load.list_new_companies():
         cvr_of_new_company = load.make_CVR_EORI(cvr_of_new_company)
+        new_sid = max_sid+n
         print("\nCompany: ", name_of_new_company, ". CVR: ", cvr_of_new_company)
-        cur.execute(f'''
-        insert into trader    (sid, tin     , referenced,                 name, street_and_number, country_cl, post_code, city)
-        values		          ({max_sid + n}, '{cvr_of_new_company}',          '0', '{name_of_new_company}', '', 'DK', '', '');''')
+        name_of_company = f"{name_of_new_company}"
+        name_of_new_company = escape_single_quote(name_of_new_company)
+        new_sid = get_sid(cvr_of_new_company, cur)
+        # cur.execute(f'''
+        # insert into trader    (sid, tin     , referenced,                 name, street_and_number, country_cl, post_code, city)
+        # values		          ({new_sid}, '{cvr_of_new_company}',          '0', '{name_of_new_company}', '', 'DK', '', '');''')
 
-        grn_type_0 = execute_guarantee(0, max_sid+n, cvr_of_new_company, name_of_new_company, cur, grn_type_0)
-        grn_type_1 = execute_guarantee(1, max_sid+n, cvr_of_new_company, name_of_new_company, cur, grn_type_1)
+        grn_type_0 = execute_guarantee(0, new_sid, cvr_of_new_company, name_of_new_company, cur, grn_type_0)
+        grn_type_1 = execute_guarantee(1, new_sid, cvr_of_new_company, name_of_new_company, cur, grn_type_1)
         n = n + 1
 
 
-    update_excel(grn_type_0, os.getcwd() + "\data\Firma garantier til fletning med breve.xlsx", 'Sheet1','Type 0 GRN')
-    update_excel(grn_type_1, os.getcwd() + "\data\Firma garantier til fletning med breve.xlsx", 'Sheet1','Type 1 GRN')
+    update_excel(grn_type_0, os.getcwd() + "\data\Firma garantier til fletning med breve Test.xlsx", 'Sheet1','New Type 0 GRN')
+    update_excel(grn_type_1, os.getcwd() + "\data\Firma garantier til fletning med breve Test.xlsx", 'Sheet1','New Type 1 GRN')
     push = input("Is the querry satisfactory? press y to commit: ")
     if push == "y":
         conn.commit()
@@ -57,8 +62,8 @@ def execute_guarantee(guarantee_type, trader_sid, cvr_of_new_company, name_of_ne
             break
         except:
             pass
-    # cur.execute(f'''insert into guarantor (grn    ,   tin                 , referenced,  name                  , country_cl, post_code, city , contact_person  , phone     , email , street_and_number)
-    #                              values   ('{num}', '{cvr_of_new_company}', false     , '{name_of_new_company}', 'DK'      , '1000'   , 'KBH', 'contact person', '12345678', 'mail', 'street 1');''')
+    cur.execute(f'''insert into guarantor (grn    ,   tin                 , referenced,  name                  , country_cl, post_code, city , contact_person  , phone     , email , street_and_number)
+                                 values   ('{num}', '{cvr_of_new_company}', false     , '{name_of_new_company}', 'DK'      , '1000'   , 'KBH', 'contact person', '12345678', 'mail', 'street 1');''')
     return grn_list
 def generate_random_grn() -> str:
     '''Tis function generates a proper GRN for type 0 or type 1'''
@@ -83,8 +88,7 @@ def update_excel(array, excel_file_path, sheet_name, column_name):
     # Append the array to the end of the specified column
     df[column_name] = new_column_0_pd
     for cell, n in zip(df['EORI number'], range(len(df['EORI number']))):
-        cell = int_to_string(cell)
-        df.loc[n, 'EORI number'] = load.make_CVR_EORI(cell)
+        df.loc[n, 'EORI number'] = load.make_CVR_EORI(int_to_string(cell))
     # Save the updated DataFrame to the Excel file
     df['Master Access Code'].fillna(1234, inplace=True)
     with pd.ExcelWriter(excel_file_path) as writer:
@@ -96,11 +100,32 @@ def int_to_string(value):
     else:
         return value
 
+def escape_single_quote(input_string):
+    if "'" in input_string:
+        # Using the replace method to add a backslash before the single quote
+        escaped_string = input_string.replace("'", "''")
+        return escaped_string
+    else:
+        # If no single quote is found, return the original string
+        return input_string
+
+def get_sid(EORI_number, cur) -> int:
+    cur.execute(f'''
+            SELECT sid 
+            From trader
+            where tin = '{EORI_number}' 
+            ''')
+    return cur.fetchall()[0][0]
+
 if __name__ == "__main__":
-    # guarantee_0_1_trader_query()
+    guarantee_0_1_trader_query()
+    # val = get_sid('DK34461597', database_connection.connection(database_connection.tfe_gms_db).cursor())
+    x = 2
+    # print(escape_single_quote("Tests' ing"))
     # update_excel([1,2,3,4,], os.getcwd() + "\data\Firma garantier til fletning med breve Test.xlsx", 'Sheet1','Type 0 GRN')
     # print(generate_random_grn())
-    conn = database_connection.connection(database_connection.tfe_gms_db)
-    cur = conn.cursor()
-    execute_guarantee(1, 6, 13421730,"grn type 0 tester", cur)
-    conn.commit()
+
+    # conn = database_connection.connection(database_connection.tfe_gms_db)
+    # cur = conn.cursor()
+    # execute_guarantee(1, 6, 13421730,"grn type 0 tester", cur)
+    # conn.commit()

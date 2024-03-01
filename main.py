@@ -9,31 +9,26 @@ import json
 def print_hi(name):
     # Use a breakpoint in the code line below to debug your script.
     print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+def filter_list(l):
+    new_l = []
+    'return a new list with the strings filtered out'
+    for i in l:
+        if isinstance(i, int):
+            new_l.append(i)
+    return new_l
 
-def get_top_worldnew():
-    import requests
-    from flask import Flask, jsonify
+def unique_in_order(sequence):
+    unique_sequence = []
+    for i in sequence:
+        for e in unique_sequence:
+            if i == e:
+                pass
+            else:
+                unique_sequence.append(i)
 
-    # Define the URL and query parameters for the Reddit API request
-    url = "https://www.reddit.com/r/worldnews/top.json"
-    params = {
-        "t": "day",  # Top posts of the day
-        "limit": 10  # Number of posts to fetch
-    }
-
-    # Set the User-Agent header to identify the script
-    headers = {"User-Agent": "MyScript/0.1"}
-
-    # Send the API request and parse the JSON response
-    response = requests.get(url, headers=headers, params=params)
-    data = json.loads(response.text)
-
-    # Print the titles of the top posts
-    for post in data["data"]["children"]:
-        print(post["data"]["title"])
-    return jsonify(data["data"]["children"])
-# Press the green button in the gutter to run the script.
+    return unique_sequence
 if __name__ == '__main__':
-    print("nothing")
+    # print(unique_in_order('aaaeeee'))
+    unique_in_order('aaaeeee')
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/

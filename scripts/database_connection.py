@@ -39,7 +39,7 @@ def get_credentials():
     lines = credentials.split('\n')
 
     username = lines[0]
-    password =  lines[1]
+    password = lines[1]
 
     return username, password
 

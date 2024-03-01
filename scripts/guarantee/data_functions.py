@@ -6,7 +6,7 @@ import os
 
 def list_new_companies() -> zip:
     '''Returns name and CVR for companies which have no MAC in the excel file overview, and therefore have not have created guarantees for them yet'''
-    filename = os.getcwd() + "\data\Firma garantier til fletning med breve.xlsx"
+    filename = os.getcwd() + "\data\Firma garantier til fletning med breve Test.xlsx"
     data = pd.read_excel(filename)
     names_of_new_companies = np.array([], dtype =str)
     CVR_of_new_companies = np.array([], dtype=str)
@@ -25,3 +25,7 @@ def make_CVR_EORI(CVR) -> str:
         return CVR
     else:
         return "DK" + CVR
+
+if __name__ == "__main__":
+    p = list_new_companies()
+    x = 1
